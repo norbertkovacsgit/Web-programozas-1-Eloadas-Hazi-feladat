@@ -1,0 +1,165 @@
+/* A tablazat_layout.css módosított tartalma, body.tablazat-page szelektorokkal */
+/* --- Alapstílusok --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e8f4fd;
+  color: #333;
+}
+
+main.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Validációs üzenet --- */
+.validation-container {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+label.validation-error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* --- Form konténer (fekete keret, grid) --- */
+.form-grid-container {
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 25px;
+  background-color: #ffffff;
+  margin: 30px auto;
+  max-width: 500px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Grid elrendezés --- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* --- Mezők --- */
+input[type="text"],
+input[type="number"] {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* --- Gombok --- */
+input[type="submit"] {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+
+button {
+  background-color: #e53935;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c62828;
+}
+
+/* --- Táblázat konténer --- */
+.employees-table {
+  margin-top: 40px;
+  padding: 20px;
+  border: 2px solid #3498db;
+  border-radius: 12px;
+  background-color: #ffffff;
+  overflow-x: auto;
+}
+
+/* --- Táblázat megjelenés --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #dddddd;
+  cursor: pointer;
+  user-select: none;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* --- Műveleti linkek --- */
+a {
+  color: #3498db;
+  text-decoration: none;
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Szűrő inputok a táblázatban --- */
+thead input[type="text"] {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+

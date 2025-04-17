@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript CRUD feladat</title>
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/tablazat-layout.css">
+</head>
+<body>
+  <header>
+    <h1 class="header">Web-programozás - 1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="tablazat.html" class="active">Táblázat</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a href="chartjs.html">Chart JS</a></li>
+      <li><a href="ajax.html">Ajax</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="react.html">React</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1 style="text-align:center;">JavaScript CRUD feladat</h1>
+    <hr>
+
+    <!-- Validációs hibaüzenet -->
+    <div class="validation-container">
+      <span id="fullNameValidationError" class="hide validation-error">
+      </span>
+    </div>
+
+    <!-- Form konténer (fekete keretben, egymás alatt) -->
+    <div class="form-grid-container">
+      <form onsubmit="event.preventDefault(); onFormSubmit();" class="form-grid">
+        <div class="form-row">
+          <label for="fullName">Név*</label>
+          <input type="text" name="fullName" id="fullName">
+        </div>
+        <div class="form-row">
+          <label for="email">Email cím</label>
+          <input type="text" name="email" id="email">
+        </div>
+        <div class="form-row">
+          <label for="salary">Fizetés</label>
+          <input type="number" name="salary" id="salary">
+        </div>
+        <div class="form-row">
+          <label for="city">Város</label>
+          <input type="text" name="city" id="city">
+        </div>
+
+        <div class="form-action-buttons">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+
+
+    </div>
+
+    <!-- Táblázat alul, vízszintesen elrendezve -->
+    <div class="employees-table">
+      <table class="list" id="employeeList">
+        <thead>
+          <tr>
+            <th>Név</th>
+            <th>Email cím</th>
+            <th>Fizetés</th>
+            <th>Város</th>
+            <th>Módosítás</th>
+          </tr>
+          <!-- Szűrősor a JS-ben jön létre -->
+        </thead>
+        <tbody>
+          <!-- JS tölti fel -->
+        </tbody>
+      </table>
+    </div>
+	
+	  <div class="form-action-buttons" style="text-align:center; margin-top: 10px;">
+        <button onclick="clearAll()">Összes törlése</button>
+      </div>
+	
+  </main>
+
+  <footer>Kovács Norbert - I0O755</footer>
+  <script src="../js/tablazat.js"></script>
+</body>
+</html>
