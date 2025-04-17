@@ -26,14 +26,10 @@
   <main class="container">
     <h1 style="text-align:center;">JavaScript CRUD feladat</h1>
     <hr>
-
-    <!-- Validációs hibaüzenet -->
     <div class="validation-container">
       <span id="fullNameValidationError" class="hide validation-error">
       </span>
     </div>
-
-    <!-- Form konténer (fekete keretben, egymás alatt) -->
     <div class="form-grid-container">
       <form onsubmit="event.preventDefault(); onFormSubmit();" class="form-grid">
         <div class="form-row">
@@ -60,8 +56,6 @@
 
 
     </div>
-
-    <!-- Táblázat alul, vízszintesen elrendezve -->
     <div class="employees-table">
       <table class="list" id="employeeList">
         <thead>
@@ -72,10 +66,8 @@
             <th>Város</th>
             <th>Módosítás</th>
           </tr>
-          <!-- Szűrősor a JS-ben jön létre -->
         </thead>
         <tbody>
-          <!-- JS tölti fel -->
         </tbody>
       </table>
     </div>

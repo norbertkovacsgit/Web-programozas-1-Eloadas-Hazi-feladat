@@ -1,5 +1,3 @@
-/* A tablazat_layout.css módosított tartalma, body.tablazat-page szelektorokkal */
-/* --- Alapstílusok --- */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -17,7 +15,6 @@ main.container {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Validációs üzenet --- */
 .validation-container {
   text-align: center;
   margin-bottom: 15px;
@@ -29,7 +26,6 @@ label.validation-error {
   font-size: 0.9rem;
 }
 
-/* --- Form konténer (fekete keret, grid) --- */
 .form-grid-container {
   border: 2px solid black;
   border-radius: 12px;
@@ -40,7 +36,6 @@ label.validation-error {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* --- Grid elrendezés --- */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -57,7 +52,6 @@ label.validation-error {
   margin-bottom: 6px;
 }
 
-/* --- Mezők --- */
 input[type="text"],
 input[type="number"] {
   padding: 10px 12px;
@@ -73,7 +67,6 @@ input[type="number"]:focus {
   outline: none;
 }
 
-/* --- Gombok --- */
 input[type="submit"] {
   background-color: black;
   color: white;
@@ -106,7 +99,6 @@ button:hover {
   background-color: #c62828;
 }
 
-/* --- Táblázat konténer --- */
 .employees-table {
   margin-top: 40px;
   padding: 20px;
@@ -116,7 +108,6 @@ button:hover {
   overflow-x: auto;
 }
 
-/* --- Táblázat megjelenés --- */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -140,7 +131,6 @@ tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-/* --- Műveleti linkek --- */
 a {
   color: #3498db;
   text-decoration: none;
@@ -152,7 +142,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- Szűrő inputok a táblázatban --- */
 thead input[type="text"] {
   width: 100%;
   padding: 6px 8px;
