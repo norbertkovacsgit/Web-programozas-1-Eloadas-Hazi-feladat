@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="hu">
+	<head>
+		<meta charset="UTF-8">
+			<title>HTML5</title>
+			<link rel="stylesheet" href="../css/index-style.css">
+				<link rel="stylesheet" href="../css/html5-style.css">
+				</head>
+				<body class="home-page">
+					<header>
+						<h1 class="header">Web-programozás - 1 Előadás Házi feladat</h1>
+					</header>
+					<nav>
+						<ul>
+							<li>
+								<a href="index.html">Kezdőlap</a>
+							</li>
+							<li>
+								<a href="tablazat.html">Táblázat</a>
+							</li>
+							<li>
+								<a href="html5.html" class="active">HTML5</a>
+							</li>
+							<li>
+								<a href="chartjs.html">Chart JS</a>
+							</li>
+							<li>
+								<a href="ajax.html">Ajax</a>
+							</li>
+							<li>
+								<a href="oojs.html">OOJS</a>
+							</li>
+							<li>
+								<a href="react.html">React</a>
+							</li>
+						</ul>
+					</nav>
+    
+						<h2>A HTML5 főbb technológiái</h2>
+						<p>Az alábbi menü az elérhető HTML5 technológiákat sorolja fel:</p>
+						<aside class="html5-sidebar">
+							<ul class="html5-menu">
+								<li>
+									<a href="#web-storage">Web Storage</a>
+								</li>
+								<li>
+									<a href="#web-workers">Web Workers</a>
+								</li>
+								<li>
+									<a href="#server-sent-events">Server-Sent Events</a>
+								</li>
+								<li>
+									<a href="#dragdrop">Drag and drop API</a>
+								</li>
+								<li>
+									<a href="#canvas">Canvas</a>
+								</li>
+								<li>
+									<a href="#svg">SVG</a>
+								</li>
+							</ul>
+						</aside>
+						<div class="html5-sections">
+							<section id="web-storage" class="html5-section">
+								<h3>Web Storage</h3>
+								<p>Itt található a(z) <strong>Web Storage</strong> rövid bemutatása.</p>
+								<div>
+									<label for="username">Felhasználónév:</label>
+									<input type="text" id="username" placeholder="Írd be a neved">
+										<button onclick="saveName()">Mentés</button>
+										<button onclick="loadName()">Betöltés</button>
+										<p id="result"/>
+										<script>
+  function saveName() {
+    const name = document.getElementById("username").value;
+    if (name) {
+      localStorage.setItem("userName", name);
+      alert("Név elmentve!");
+    } else {
+      alert("Kérlek, adj meg egy nevet.");
+    }
+  }
+
+  function loadName() {
+    const storedName = localStorage.getItem("userName");
+    const result = document.getElementById("result");
+    if (storedName) {
+      result.textContent = "Elmentett név: " + storedName;
+    } else {
+      result.textContent = "Nincs mentett név.";
+    }
+  }
+										</script>
+									</div>
+								</section>
+								<section id="web-workers" class="html5-section">
+									<h3>Web Workers</h3>
+									<p>Itt található a(z) <strong>Web Workers</strong> rövid bemutatása.</p>
+<p>Számolás: <output id="result2"></output></p>
+<button onclick="startWorker()">Indítás</button> 
+<button onclick="stopWorker()">Leállítás</button>
+
+<script>
+let w;
+
+function startWorker() {
+  const x = document.getElementById("result2");
+  if(typeof(Worker) !== "undefined") {
+    if(typeof(w) == "undefined") {
+      w = new Worker("../js/worker.js");
+    }
+    w.onmessage = function(event) {
+      x.innerHTML = event.data;
+    };
+  } else {
+    x.innerHTML = "Sorry! No Web Worker support.";
+  }
+}
+
+function stopWorker() { 
+  w.terminate();
+  w = undefined;
+}
+</script>
+								</section>
+								<section id="server-sent-events" class="html5-section">
+									<h3>Server-Sent Events</h3>
+									<p>Itt található a(z) <strong>Server-Sent Events</strong> rövid bemutatása.</p>
+									<p>Idő a szervertől: <span id="time">–</span>
+									</p>
+									<script>
+    const eventSource = new EventSource("../php/server.php");
+
+    eventSource.onmessage = function (event) {
+      document.getElementById("time").textContent = event.data;
+    };
+									</script>
+								</section>
+								<section id="dragdrop" class="html5-section">
+									<h3>Drag and drop API</h3>
+									<p>Itt található a(z) <strong>Drag and drop API</strong> rövid bemutatása.</p>
+  <div class="drag-container">
+    <div id="box1" class="draggable" draggable="true" style="background-color: #3498db; color: white;">
+      Kék doboz
+    </div>
+    <div id="box2" class="draggable" draggable="true" style="background-color: #e74c3c; color: white;">
+      Piros doboz
+    </div>
+  </div>
+
+  <script>
+    const boxes = document.querySelectorAll(".draggable");
+    let draggedBox = null;
+
+    boxes.forEach(box => {
+      box.addEventListener("dragstart", function (e) {
+        draggedBox = e.target;
+      });
+
+      box.addEventListener("dragover", function (e) {
+        e.preventDefault();
+        this.classList.add("hovered");
+      });
+
+      box.addEventListener("dragleave", function () {
+        this.classList.remove("hovered");
+      });
+
+      box.addEventListener("drop", function (e) {
+        e.preventDefault();
+        this.classList.remove("hovered");
+
+        if (draggedBox && draggedBox !== this) {
+          // Szöveg és színcsere
+          const tempText = this.textContent;
+          const tempColor = this.style.backgroundColor;
+          const tempTextColor = this.style.color;
+
+          this.textContent = draggedBox.textContent;
+          this.style.backgroundColor = draggedBox.style.backgroundColor;
+          this.style.color = draggedBox.style.color;
+
+          draggedBox.textContent = tempText;
+          draggedBox.style.backgroundColor = tempColor;
+          draggedBox.style.color = tempTextColor;
+        }
+      });
+    });
+  </script>
+									
+								</section>
+								<section id="canvas" class="html5-section">
+									<h3>Canvas</h3>
+									<p>Itt található a(z) <strong>Canvas</strong> rövid bemutatása.</p>
+									  <p>A <strong>Canvas API</strong> lehetővé teszi, hogy 2D (vagy 3D) grafikát rajzoljunk a weboldalon belül JavaScript segítségével.</p>
+
+  <canvas id="myCanvas" width="300" height="200" style="border:1px solid #ccc; background-color: #fff;"></canvas><br>
+  <button onclick="drawBox()" class="styled-button">Rajzolj négyzetet</button>
+
+  <script>
+    function drawBox() {
+      const canvas = document.getElementById("myCanvas");
+      if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#3498db";
+        ctx.fillRect(50, 50, 100, 100);
+
+        ctx.strokeStyle = "#2c3e50";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(50, 50, 100, 100);
+      } else {
+        alert("A böngésződ nem támogatja a Canvas elemet!");
+      }
+    }
+  </script>
+									
+								</section>
+								<section id="svg" class="html5-section">
+									<h3>SVG</h3>
+									<p>Itt található a(z) <strong>SVG</strong> rövid bemutatása.</p>
+									
+									  <p>Az <strong>SVG</strong> (Scalable Vector Graphics) vektorgrafikus képek megjelenítésére alkalmas, amelyek nagyíthatók minőségromlás nélkül.</p>
+
+  <svg id="svgShape" width="300" height="200" style="border: 1px solid #ccc; background-color: #f9f9f9;">
+    <circle cx="150" cy="100" r="40" fill="#e74c3c" stroke="#2c3e50" stroke-width="2"/>
+    <text x="150" y="105" font-size="14" fill="#fff" text-anchor="middle" alignment-baseline="middle">Kattints!</text>
+  </svg><br>
+
+  <button onclick="changeColor()" class="styled-button">Szín váltás</button>
+
+  <script>
+    function changeColor() {
+      const circle = document.querySelector("#svgShape circle");
+      const current = circle.getAttribute("fill");
+      const newColor = current === "#e74c3c" ? "#3498db" : "#e74c3c";
+      circle.setAttribute("fill", newColor);
+    }
+  </script>
+									
+								</section>
+							</div>
+						        </section>
+    </div>
+</main>
+						<footer>Kovács Norbert - I0O755</footer>
+						<script>
+    const links = document.querySelectorAll('.html5-menu a');
+    const sections = document.querySelectorAll('.html5-section');
+
+    window.addEventListener('scroll', () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+        links.forEach(link => {
+            link.classList.remove("active-sub");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active-sub");
+            }
+        });
+    });
+						</script>
+					</body>
+				</html>

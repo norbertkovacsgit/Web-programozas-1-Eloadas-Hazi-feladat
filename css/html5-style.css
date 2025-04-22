@@ -1,0 +1,147 @@
+body.home-page .html5-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0px 10px;
+  gap: 30px;
+  padding-top: 30px;
+}
+
+body.home-page h2 {
+  margin: 10px 10px 0px 10px;
+  text-align: left;
+}
+
+body.home-page p {
+  margin: 0px 0px 0px 10px;
+  text-align: left;
+}
+
+body.home-page .html5-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 30px;
+  align-self: flex-start;
+}
+
+body.home-page .html5-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.home-page .html5-menu li {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+body.home-page .html5-menu li a {
+  display: block;
+  background-color: #e8f4fd;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+body.home-page .html5-menu li a:hover,
+body.home-page .html5-menu li a.active-sub {
+  background-color: #3498db;
+  color: white;
+}
+
+body.home-page .html5-sections {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 300px;
+}
+
+body.home-page .html5-section {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 40px;
+  background-color: #f4f6f8;
+  border-left: 4px solid #3498db;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+body.home-page .html5-section h3 {
+  color: #0073e6;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+body.home-page .html5-section p {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+button {
+  padding: 2px 2px;
+  font-size: 20px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background-color: #e8f4fd;
+  color: #2c3e50;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  width: 250px;
+  margin: 10px 10px 10px 0;
+  box-sizing: border-box;
+}
+
+.drag-container {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.draggable {
+  width: 140px;
+  height: 140px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 140px;
+  border-radius: 10px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.draggable.hovered {
+  outline: 2px dashed #3498db;
+  transform: scale(1.05);
+}
+
+canvas {
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+svg {
+  margin-top: 10px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
