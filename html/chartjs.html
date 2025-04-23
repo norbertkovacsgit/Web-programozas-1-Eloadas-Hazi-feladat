@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Chart.js</title>
+  <link rel="stylesheet" href="../css/index-style.css">
+  <link rel="stylesheet" href="../css/chart-style.css">
+</head>
+<body class="home-page chart-page">
+  <header>
+    <h1 class="header">Web-programozás - 1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="tablazat.html">Táblázat</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a href="chartjs.html" class="active">Chart JS</a></li>
+      <li><a href="ajax.html">Ajax</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="react.html">React</a></li>
+    </ul>
+  </nav>
+    
+    <h2>Chart.js feladat</h2>
+    <p>Kattints egy sorra a táblázatban, hogy az adatok vonaldiagramon jelenjenek meg!</p>
+
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Hónap</th>
+          <th>Adat1</th>
+          <th>Adat2</th>
+          <th>Adat3</th>
+          <th>Adat4</th>
+          <th>Adat5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Január</td><td>12</td><td>19</td><td>3</td><td>5</td><td>2</td></tr>
+        <tr><td>Február</td><td>8</td><td>15</td><td>6</td><td>4</td><td>7</td></tr>
+        <tr><td>Március</td><td>10</td><td>20</td><td>9</td><td>11</td><td>5</td></tr>
+        <tr><td>Április</td><td>5</td><td>8</td><td>12</td><td>14</td><td>6</td></tr>
+        <tr><td>Május</td><td>6</td><td>10</td><td>7</td><td>9</td><td>3</td></tr>
+      </tbody>
+    </table>
+
+    <canvas id="lineChart" width="600" height="300"></canvas>
+          </section>
+    </div>
+</main>
+
+  <footer>Kovács Norbert - I0O755</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/chart-logic.js"></script>
+</body>
+</html>
+
