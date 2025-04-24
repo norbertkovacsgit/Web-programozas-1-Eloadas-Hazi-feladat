@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax</title>
+  <link rel="stylesheet" href="../css/index-style.css">
+  <link rel="stylesheet" href="../css/ajax-style.css">
+</head>
+<body class="home-page ajax-page">
+  <header>
+    <h1 class="header">Web-programozás - 1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="tablazat.html">Táblázat</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a href="chartjs.html">Chart JS</a></li>
+      <li><a href="ajax.html" class="active">Ajax</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="react.html">React</a></li>
+    </ul>
+  </nav>
+
+    <h2>Egyszerű AJAX példa (fetch API)</h2>
+    <div class="ajax-section">
+      <button onclick="loadData()" class="styled-button">Töltsd be a nevet</button>
+      <p id="ajax-result" class="ajax-result"></p>
+    </div>
+
+    <hr>
+
+<h2>AJAX CRUD alkalmazás</h2>
+<div class="ajax-section">
+  <div class="ajax-field">
+    <label for="name">Név:</label>
+    <input type="text" id="name">
+  </div>
+  <div class="ajax-field">
+    <label for="height">Magasság:</label>
+    <input type="text" id="height">
+  </div>
+  <div class="ajax-field">
+    <label for="weight">Súly:</label>
+    <input type="text" id="weight">
+  </div>
+  <div class="ajax-field">
+    <label for="code">Code:</label>
+    <input type="text" id="code">
+  </div>
+  <div class="ajax-field">
+    <button onclick="createData()">Hozzáadás</button>
+  </div>
+</div>
+
+<div class="ajax-section">
+  <button onclick="readData()">Adatok lekérdezése</button>
+</div>
+
+<div class="ajax-section">
+  <div class="ajax-field">
+    <label for="id">ID:</label>
+    <input type="text" id="id">
+  </div>
+  <div class="ajax-field">
+    <button onclick="getDataForId()">Adatok betöltése ID alapján</button>
+  </div>
+</div>
+
+<div class="ajax-section">
+  <button onclick="updateData()">Módosítás</button>
+  <button onclick="deleteData()">Törlés</button>
+</div>
+
+    <div id="status" class="ajax-status"></div>
+    <div class="ajax-output" id="output"></div>
+    <div class="ajax-output" id="statistics"></div>
+          </section>
+    </div>
+</main>
+
+  <footer>Kovács Norbert - I0O755</footer>
+
+  <script src="../js/ajax.js"></script>
+  <script>
+    function loadData() {
+      fetch('https://jsonplaceholder.typicode.com/users/1')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('ajax-result').innerText = "Név: " + data.name;
+        });
+    }
+  </script>
+</body>
+</html>

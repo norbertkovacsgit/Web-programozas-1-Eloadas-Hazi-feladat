@@ -1,0 +1,128 @@
+body.home-page.ajax-page .ajax-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.home-page.ajax-page .ajax-menu li {
+  margin: 10px 0;
+}
+
+body.home-page.ajax-page .ajax-menu li a {
+  display: block;
+  background-color: #e8f4fd;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+body.home-page.ajax-page .ajax-menu li a:hover,
+body.home-page.ajax-page .ajax-menu li a.active-sub {
+  background-color: #3498db;
+  color: white;
+}
+
+body.home-page.ajax-page .ajax-content {
+  flex: 1;
+  padding-left: 20px;
+  max-width: 800px;
+}
+
+body.home-page.ajax-page .ajax-section {
+  background-color: #f4f6f8;
+  padding: 20px;
+  border-left: 4px solid #3498db;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+body.home-page.ajax-page h2,
+body.home-page.ajax-page h3 {
+  color: #0073e6;
+  margin: 0 0 10px;
+}
+
+body.home-page.ajax-page input[type="text"] {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  margin: 10px 10px 10px 0;
+  box-sizing: border-box;
+}
+
+body.home-page.ajax-page button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background-color: #e8f4fd;
+  color: #2c3e50;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+body.home-page.ajax-page button:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+body.home-page.ajax-page .ajax-result,
+body.home-page.ajax-page .ajax-output,
+body.home-page.ajax-page .ajax-status {
+  margin-top: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+body.home-page.ajax-page .ajax-status.error {
+  color: red;
+}
+
+body.home-page.ajax-page .ajax-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+body.home-page.ajax-page .ajax-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 30px;
+  align-self: flex-start;
+}
+
+body.home-page.ajax-page .ajax-content {
+  flex: 1;
+  max-width: 800px;
+}
+
+body.home-page.ajax-page .ajax-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+body.home-page.ajax-page .ajax-field label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
