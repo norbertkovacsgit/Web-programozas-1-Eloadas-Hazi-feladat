@@ -1,0 +1,10 @@
+<IfModule mod_dir.c>
+    DirectoryIndex html/index.html
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # /foo.html → /html/foo.html
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^/]+\.html)$ html/$1 [L]
+</IfModule>

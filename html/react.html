@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport"
+			      content="width=device-width, initial-scale=1.0">
+				<title>React Alkalmazások</title>
+				<link rel="stylesheet"
+				      href="../css/index-style.css">
+					<link rel="stylesheet"
+					      href="../css/react-style.css">
+</head>
+					<body>
+						<div id="react-app">
+							<header>
+								<h1 class="header">Web-programozás - 1 Előadás Házi feladat</h1>
+							</header>
+							<nav>
+								<ul>
+									<li>
+										<a href="index.html">Kezdőlap</a>
+									</li>
+									<li>
+										<a href="tablazat.html">Táblázat</a>
+									</li>
+									<li>
+										<a href="html5.html">HTML5</a>
+									</li>
+									<li>
+										<a href="chartjs.html">Chart JS</a>
+									</li>
+									<li>
+										<a href="ajax.html">Ajax</a>
+									</li>
+									<li>
+										<a href="oojs.html">OOJS</a>
+									</li>
+									<li>
+										<a href="react.html"
+										   class="active">React</a>
+									</li>
+								</ul>
+							</nav>
+							<div id="container">
+								<div id="sidebar">
+									<a href="#"
+									   onclick="navigateApp('/kpo')">Kő-Papír-Olló</a>
+									<a href="#"
+									   onclick="navigateApp('/tetris')">Tetris</a>
+								</div>
+								<div id="main-content">
+									<iframe id="app-frame"
+									        src="../dist/index.html"
+									        style="width:100%; height:100%; border:none;">
+									</iframe>
+								</div>
+							</div>
+							<footer>Kovács Norbert - I0O755</footer>
+						</div>
+						<script>
+  function navigateApp(route) {
+    document.getElementById('app-frame')
+            .src = `../dist/index.html#${route}`;
+  }
+</script>
+					</body>
+				</html>
+

@@ -1,0 +1,116 @@
+#react-app {
+  font-family: Arial, sans-serif;
+  background-color: #e8f4fd;
+  color: #333;
+}
+
+#react-app header {
+  background-color: #e8f4fd;
+  color: #000000;
+  padding: 20px;
+  text-align: center;
+}
+
+#react-app .header {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#react-app nav {
+  border: 3px solid #006bb3;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+#react-app nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0;
+}
+
+#react-app nav ul li {
+  margin: 0 15px;
+}
+
+#react-app nav a {
+  border: 3px solid #000000;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+#react-app nav a:hover {
+  background-color: #4a90e2;
+}
+
+#react-app nav .active {
+  background-color: #006bb3;
+}
+
+#react-app #container {
+  display: flex;
+  height: calc(100vh - 120px);
+}
+
+#react-app #sidebar {
+  width: 220px;
+  background-color: #e8f4fd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 3px solid #006bb3;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px 0;
+}
+
+#react-app #sidebar a {
+  padding: 14px 20px;
+  color: #006bb3;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid #006bb3;
+  margin: 5px 10px;
+  border-radius: 8px;
+  font-size: 1em;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#react-app #sidebar a:hover {
+  background-color: #006bb3;
+  color: white;
+}
+
+#react-app #main-content {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 0;
+}
+
+#react-app iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #e8f4fd;
+}
+
+#react-app footer {
+  background-color: #333;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
